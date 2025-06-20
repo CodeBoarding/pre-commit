@@ -1,0 +1,25 @@
+graph LR
+    MarkItDown["MarkItDown"]
+    DocumentConverter["DocumentConverter"]
+    DocxConverter["DocxConverter"]
+    HtmlConverter["HtmlConverter"]
+    pre_process_docx["pre_process_docx"]
+    oMath2Latex["oMath2Latex"]
+    _uri_utils["_uri_utils"]
+    _stream_info["_stream_info"]
+    _markdownify["_markdownify"]
+    latex_dict["latex_dict"]
+    MarkItDown -- "uses" --> DocumentConverter
+    MarkItDown -- "uses" --> _uri_utils
+    DocumentConverter -- "uses" --> _stream_info
+    DocxConverter -- "implements" --> DocumentConverter
+    DocxConverter -- "uses" --> HtmlConverter
+    HtmlConverter -- "implements" --> DocumentConverter
+    HtmlConverter -- "uses" --> _markdownify
+    pre_process_docx -- "uses" --> oMath2Latex
+    oMath2Latex -- "uses" --> latex_dict
+    click MarkItDown href "./MarkItDown.md" "Details"
+    click DocumentConverter href "./DocumentConverter.md" "Details"
+    click DocxConverter href "./DocxConverter.md" "Details"
+    click HtmlConverter href "./HtmlConverter.md" "Details"
+    click pre_process_docx href "./pre_process_docx.md" "Details"

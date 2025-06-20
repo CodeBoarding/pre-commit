@@ -1,0 +1,8 @@
+graph LR
+    Input_Stream_Processing["Input Stream Processing"]
+    Stream_Information_and_URI_Utilities["Stream Information and URI Utilities"]
+    MarkItDown_Core_Engine["MarkItDown Core Engine"]
+    Input_Stream_Processing -- "uses" --> Stream_Information_and_URI_Utilities
+    MarkItDown_Core_Engine -- "uses" --> Input_Stream_Processing
+    click Input_Stream_Processing href "./Input_Stream_Processing.md" "Details"
+    click MarkItDown_Core_Engine href "./MarkItDown_Core_Engine.md" "Details"

@@ -1,0 +1,17 @@
+graph LR
+    Markitdown["Markitdown"]
+    StreamInfo["StreamInfo"]
+    _BaseConverter["_BaseConverter"]
+    UriUtils["UriUtils"]
+    converters_Package["converters Package"]
+    HtmlConverter["HtmlConverter"]
+    DocxConverter["DocxConverter"]
+    Markitdown -- "uses" --> StreamInfo
+    Markitdown -- "uses" --> _BaseConverter
+    Markitdown -- "uses" --> converters_Package
+    Markitdown -- "uses" --> UriUtils
+    _BaseConverter -- "uses" --> StreamInfo
+    converters_Package -- "implements" --> _BaseConverter
+    DocxConverter -- "uses" --> HtmlConverter
+    click HtmlConverter href "./HtmlConverter.md" "Details"
+    click DocxConverter href "./DocxConverter.md" "Details"

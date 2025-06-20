@@ -1,0 +1,12 @@
+graph LR
+    DocxConverter["DocxConverter"]
+    DocxPreProcessor["DocxPreProcessor"]
+    OMMLToLaTeXConverter["OMMLToLaTeXConverter"]
+    HtmlConverter["HtmlConverter"]
+    MissingDependencyException["MissingDependencyException"]
+    DocxConverter -- "uses" --> DocxPreProcessor
+    DocxConverter -- "uses" --> HtmlConverter
+    DocxConverter -- "handles" --> MissingDependencyException
+    DocxPreProcessor -- "uses" --> OMMLToLaTeXConverter
+    click DocxConverter href "./DocxConverter.md" "Details"
+    click HtmlConverter href "./HtmlConverter.md" "Details"

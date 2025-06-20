@@ -1,0 +1,9 @@
+graph LR
+    DOCX_Pre_processor["DOCX Pre-processor"]
+    OMML_to_LaTeX_Converter["OMML to LaTeX Converter"]
+    LaTeX_Mapping_Dictionary["LaTeX Mapping Dictionary"]
+    DOCX_Pre_processor -- "Orchestrates" --> OMML_to_LaTeX_Converter
+    DOCX_Pre_processor -- "Provides XML Content to" --> OMML_to_LaTeX_Converter
+    OMML_to_LaTeX_Converter -- "Returns Transformed XML to" --> DOCX_Pre_processor
+    OMML_to_LaTeX_Converter -- "Uses" --> LaTeX_Mapping_Dictionary
+    LaTeX_Mapping_Dictionary -- "Provides Mappings for" --> OMML_to_LaTeX_Converter

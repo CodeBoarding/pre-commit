@@ -1,0 +1,27 @@
+graph LR
+    Base_Converter_Interface["Base Converter Interface"]
+    HTML_to_Markdown_Converter["HTML to Markdown Converter"]
+    Custom_Markdownify_Utility["Custom Markdownify Utility"]
+    DOCX_Converter["DOCX Converter"]
+    DOCX_Pre_processing_Utility["DOCX Pre-processing Utility"]
+    YouTube_Content_Converter["YouTube Content Converter"]
+    RSS_Atom_Feed_Converter["RSS/Atom Feed Converter"]
+    MarkItDown_Core -- "uses" --> Base_Converter_Interface
+    HTML_to_Markdown_Converter -- "uses" --> Custom_Markdownify_Utility
+    DOCX_Converter -- "inherits from" --> HTML_to_Markdown_Converter
+    DOCX_Converter -- "uses" --> DOCX_Pre_processing_Utility
+    RSS_Atom_Feed_Converter -- "uses" --> Custom_Markdownify_Utility
+    Document_Conversion_Subsystem -- "contains" --> Base_Converter_Interface
+    Document_Conversion_Subsystem -- "contains" --> HTML_to_Markdown_Converter
+    Document_Conversion_Subsystem -- "contains" --> Custom_Markdownify_Utility
+    Document_Conversion_Subsystem -- "contains" --> DOCX_Converter
+    Document_Conversion_Subsystem -- "contains" --> DOCX_Pre_processing_Utility
+    Document_Conversion_Subsystem -- "contains" --> YouTube_Content_Converter
+    Document_Conversion_Subsystem -- "contains" --> RSS_Atom_Feed_Converter
+    click Base_Converter_Interface href "./Base_Converter_Interface.md" "Details"
+    click HTML_to_Markdown_Converter href "./HTML_to_Markdown_Converter.md" "Details"
+    click Custom_Markdownify_Utility href "./Custom_Markdownify_Utility.md" "Details"
+    click DOCX_Converter href "./DOCX_Converter.md" "Details"
+    click DOCX_Pre_processing_Utility href "./DOCX_Pre_processing_Utility.md" "Details"
+    click YouTube_Content_Converter href "./YouTube_Content_Converter.md" "Details"
+    click RSS_Atom_Feed_Converter href "./RSS_Atom_Feed_Converter.md" "Details"

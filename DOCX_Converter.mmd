@@ -1,0 +1,18 @@
+graph LR
+    DocxConverter["DocxConverter"]
+    HtmlConverter["HtmlConverter"]
+    DocxPreProcessor["DocxPreProcessor"]
+    MissingDependencyException["MissingDependencyException"]
+    oMath2Latex["oMath2Latex"]
+    latex_dict["latex_dict"]
+    _CustomMarkdownify["_CustomMarkdownify"]
+    DocxConverter -- "uses" --> DocxPreProcessor
+    DocxConverter -- "delegates to" --> HtmlConverter
+    DocxConverter -- "raises" --> MissingDependencyException
+    HtmlConverter -- "uses" --> _CustomMarkdownify
+    DocxPreProcessor -- "uses" --> oMath2Latex
+    oMath2Latex -- "uses" --> latex_dict
+    _CustomMarkdownify -- "extends" --> markdownify_MarkdownConverter
+    click DocxConverter href "./DocxConverter.md" "Details"
+    click HtmlConverter href "./HtmlConverter.md" "Details"
+    click _CustomMarkdownify href "./_CustomMarkdownify.md" "Details"

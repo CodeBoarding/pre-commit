@@ -1,0 +1,24 @@
+graph LR
+    MarkItDown_Core_Engine["MarkItDown Core Engine"]
+    Input_Converter_Management["Input & Converter Management"]
+    Document_Conversion_Subsystem["Document Conversion Subsystem"]
+    Command_Line_Interface_CLI_["Command Line Interface (CLI)"]
+    Error_Handling["Error Handling"]
+    Command_Line_Interface_CLI_ -- "initiates" --> MarkItDown_Core_Engine
+    MarkItDown_Core_Engine -- "processes requests from" --> Command_Line_Interface_CLI_
+    MarkItDown_Core_Engine -- "utilizes" --> Input_Converter_Management
+    Input_Converter_Management -- "provides context to" --> MarkItDown_Core_Engine
+    MarkItDown_Core_Engine -- "dispatches to" --> Document_Conversion_Subsystem
+    Document_Conversion_Subsystem -- "performs conversions for" --> MarkItDown_Core_Engine
+    MarkItDown_Core_Engine -- "raises/handles" --> Error_Handling
+    Error_Handling -- "provides types for" --> MarkItDown_Core_Engine
+    Input_Converter_Management -- "supplies data to" --> Document_Conversion_Subsystem
+    Document_Conversion_Subsystem -- "consumes data from" --> Input_Converter_Management
+    Document_Conversion_Subsystem -- "raises" --> Error_Handling
+    Error_Handling -- "defines exceptions for" --> Document_Conversion_Subsystem
+    Command_Line_Interface_CLI_ -- "reports" --> Error_Handling
+    Error_Handling -- "informs" --> Command_Line_Interface_CLI_
+    click MarkItDown_Core_Engine href "./MarkItDown_Core_Engine.md" "Details"
+    click Input_Converter_Management href "./Input_Converter_Management.md" "Details"
+    click Document_Conversion_Subsystem href "./Document_Conversion_Subsystem.md" "Details"
+    click Command_Line_Interface_CLI_ href "./Command_Line_Interface_CLI_.md" "Details"

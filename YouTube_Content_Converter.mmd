@@ -1,0 +1,17 @@
+graph LR
+    YouTubeConverter["YouTubeConverter"]
+    _findKey["_findKey"]
+    _get["_get"]
+    _retry_operation["_retry_operation"]
+    YouTubeTranscriptApi["YouTubeTranscriptApi"]
+    DocumentConverterResult["DocumentConverterResult"]
+    YouTubeConverter -- "uses" --> _findKey
+    YouTubeConverter -- "uses" --> _get
+    YouTubeConverter -- "uses" --> _retry_operation
+    YouTubeConverter -- "interacts with" --> YouTubeTranscriptApi
+    YouTubeConverter -- "produces" --> DocumentConverterResult
+    _findKey -- "is used by" --> YouTubeConverter
+    _get -- "is used by" --> YouTubeConverter
+    _retry_operation -- "is used by" --> YouTubeConverter
+    YouTubeTranscriptApi -- "is interacted with by" --> YouTubeConverter
+    DocumentConverterResult -- "is produced by" --> YouTubeConverter

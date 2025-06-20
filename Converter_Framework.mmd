@@ -1,0 +1,21 @@
+graph LR
+    DocumentConverter["DocumentConverter"]
+    MarkItDown["MarkItDown"]
+    converters["converters"]
+    HtmlConverter["HtmlConverter"]
+    DocxConverter["DocxConverter"]
+    _StreamInfo["_StreamInfo"]
+    MarkItDown -- "registers" --> DocumentConverter
+    MarkItDown -- "selects" --> DocumentConverter
+    MarkItDown -- "uses" --> _StreamInfo
+    DocumentConverter -- "uses" --> _StreamInfo
+    DocxConverter -- "implements" --> DocumentConverter
+    HtmlConverter -- "implements" --> DocumentConverter
+    DocxConverter -- "uses" --> HtmlConverter
+    converters -- "contains" --> DocxConverter
+    converters -- "contains" --> HtmlConverter
+    MarkItDown -- "loads from" --> converters
+    click DocumentConverter href "./DocumentConverter.md" "Details"
+    click MarkItDown href "./MarkItDown.md" "Details"
+    click HtmlConverter href "./HtmlConverter.md" "Details"
+    click DocxConverter href "./DocxConverter.md" "Details"

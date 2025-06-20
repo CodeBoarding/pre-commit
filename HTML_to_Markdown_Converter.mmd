@@ -1,0 +1,13 @@
+graph LR
+    HtmlConverter["HtmlConverter"]
+    _CustomMarkdownify["_CustomMarkdownify"]
+    DocumentConverterResult["DocumentConverterResult"]
+    StreamInfo["StreamInfo"]
+    HtmlConverter -- "delegates to" --> _CustomMarkdownify
+    HtmlConverter -- "produces" --> DocumentConverterResult
+    HtmlConverter -- "depends on" --> StreamInfo
+    _CustomMarkdownify -- "is used by" --> HtmlConverter
+    DocumentConverterResult -- "is produced by" --> HtmlConverter
+    StreamInfo -- "is used by" --> HtmlConverter
+    click HtmlConverter href "./HtmlConverter.md" "Details"
+    click _CustomMarkdownify href "./_CustomMarkdownify.md" "Details"

@@ -1,0 +1,20 @@
+graph LR
+    Command_Line_Interface_CLI_["Command Line Interface (CLI)"]
+    MarkItDown_Core_Engine["MarkItDown Core Engine"]
+    StreamInfo["StreamInfo"]
+    DocumentConverterResult["DocumentConverterResult"]
+    Argument_Parser_argparse_["Argument Parser (argparse)"]
+    System_I_O_sys_["System I/O (sys)"]
+    Codec_Handler_codecs_["Codec Handler (codecs)"]
+    Plugin_Entry_Point_Discoverer_importlib_metadata_entry_points_["Plugin Entry Point Discoverer (importlib.metadata.entry_points)"]
+    Command_Line_Interface_CLI_ -- "initializes & directs" --> MarkItDown_Core_Engine
+    Command_Line_Interface_CLI_ -- "constructs & passes" --> StreamInfo
+    Command_Line_Interface_CLI_ -- "receives & outputs" --> DocumentConverterResult
+    Command_Line_Interface_CLI_ -- "uses" --> Argument_Parser_argparse_
+    Command_Line_Interface_CLI_ -- "interacts with" --> System_I_O_sys_
+    Command_Line_Interface_CLI_ -- "uses" --> Codec_Handler_codecs_
+    Command_Line_Interface_CLI_ -- "uses" --> Plugin_Entry_Point_Discoverer_importlib_metadata_entry_points_
+    MarkItDown_Core_Engine -- "uses" --> StreamInfo
+    MarkItDown_Core_Engine -- "produces" --> DocumentConverterResult
+    click Command_Line_Interface_CLI_ href "./Command_Line_Interface_CLI_.md" "Details"
+    click MarkItDown_Core_Engine href "./MarkItDown_Core_Engine.md" "Details"

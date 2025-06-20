@@ -1,0 +1,14 @@
+graph LR
+    HtmlConverter["HtmlConverter"]
+    _CustomMarkdownify["_CustomMarkdownify"]
+    DocumentConverterResult["DocumentConverterResult"]
+    StreamInfo["StreamInfo"]
+    BeautifulSoup["BeautifulSoup"]
+    HtmlConverter -- "delegates to" --> _CustomMarkdownify
+    HtmlConverter -- "produces" --> DocumentConverterResult
+    HtmlConverter -- "consumes" --> StreamInfo
+    HtmlConverter -- "uses" --> BeautifulSoup
+    _CustomMarkdownify -- "processes" --> BeautifulSoup
+    _CustomMarkdownify -- "extends" --> markdownify_MarkdownConverter
+    click HtmlConverter href "./HtmlConverter.md" "Details"
+    click _CustomMarkdownify href "./_CustomMarkdownify.md" "Details"

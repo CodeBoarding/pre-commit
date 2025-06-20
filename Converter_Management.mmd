@@ -1,0 +1,20 @@
+graph LR
+    DocumentConverter["DocumentConverter"]
+    DocumentConverterResult["DocumentConverterResult"]
+    StreamInfo["StreamInfo"]
+    HtmlConverter["HtmlConverter"]
+    _CustomMarkdownify["_CustomMarkdownify"]
+    Converter_Management_Subsystem -- "contains" --> DocumentConverter
+    Converter_Management_Subsystem -- "contains" --> DocumentConverterResult
+    Converter_Management_Subsystem -- "contains" --> StreamInfo
+    Converter_Management_Subsystem -- "contains" --> HtmlConverter
+    Converter_Management_Subsystem -- "contains" --> _CustomMarkdownify
+    HtmlConverter -- "implements" --> DocumentConverter
+    DocumentConverter -- "uses" --> StreamInfo
+    DocumentConverter -- "returns" --> DocumentConverterResult
+    HtmlConverter -- "uses" --> StreamInfo
+    HtmlConverter -- "produces" --> DocumentConverterResult
+    HtmlConverter -- "delegates to" --> _CustomMarkdownify
+    click DocumentConverter href "./DocumentConverter.md" "Details"
+    click HtmlConverter href "./HtmlConverter.md" "Details"
+    click _CustomMarkdownify href "./_CustomMarkdownify.md" "Details"

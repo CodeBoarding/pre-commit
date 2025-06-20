@@ -1,0 +1,27 @@
+graph LR
+    MarkItDown["MarkItDown"]
+    DocumentConverter["DocumentConverter"]
+    StreamInfo["StreamInfo"]
+    Built_in_Converters["Built-in Converters"]
+    _uri_utils["_uri_utils"]
+    _exceptions["_exceptions"]
+    MarkItDown -- "orchestrates" --> DocumentConverter
+    DocumentConverter -- "provides interface to" --> MarkItDown
+    MarkItDown -- "creates and populates" --> StreamInfo
+    StreamInfo -- "provides context for" --> MarkItDown
+    MarkItDown -- "utilizes" --> Built_in_Converters
+    Built_in_Converters -- "are utilized by" --> MarkItDown
+    MarkItDown -- "uses" --> _uri_utils
+    _uri_utils -- "provides utilities for" --> MarkItDown
+    MarkItDown -- "handles exceptions from" --> _exceptions
+    _exceptions -- "defines exceptions for" --> MarkItDown
+    DocumentConverter -- "consumes" --> StreamInfo
+    StreamInfo -- "provides context for" --> DocumentConverter
+    Built_in_Converters -- "implement" --> DocumentConverter
+    DocumentConverter -- "is base class for" --> Built_in_Converters
+    Built_in_Converters -- "process" --> StreamInfo
+    StreamInfo -- "provides input for" --> Built_in_Converters
+    DocumentConverter -- "raises exceptions from" --> _exceptions
+    _exceptions -- "defines exceptions for" --> DocumentConverter
+    click MarkItDown href "./MarkItDown.md" "Details"
+    click DocumentConverter href "./DocumentConverter.md" "Details"

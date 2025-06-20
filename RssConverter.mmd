@@ -1,0 +1,22 @@
+graph LR
+    RssConverter["RssConverter"]
+    Feed_Type_Detector["Feed Type Detector"]
+    Atom_Feed_Parser["Atom Feed Parser"]
+    RSS_Feed_Parser["RSS Feed Parser"]
+    XML_Data_Extraction_Utility["XML Data Extraction Utility"]
+    Content_Markdownifier["Content Markdownifier"]
+    Custom_Markdownify["Custom Markdownify"]
+    DocumentConverterResult["DocumentConverterResult"]
+    RssConverter -- "orchestrates" --> Feed_Type_Detector
+    RssConverter -- "delegates to" --> Atom_Feed_Parser
+    RssConverter -- "delegates to" --> RSS_Feed_Parser
+    RssConverter -- "produces" --> DocumentConverterResult
+    Atom_Feed_Parser -- "uses" --> XML_Data_Extraction_Utility
+    Atom_Feed_Parser -- "calls" --> Content_Markdownifier
+    Atom_Feed_Parser -- "constructs" --> DocumentConverterResult
+    RSS_Feed_Parser -- "uses" --> XML_Data_Extraction_Utility
+    RSS_Feed_Parser -- "calls" --> Content_Markdownifier
+    RSS_Feed_Parser -- "constructs" --> DocumentConverterResult
+    Content_Markdownifier -- "instantiates and invokes" --> Custom_Markdownify
+    Custom_Markdownify -- "is a dependency of" --> Content_Markdownifier
+    click RssConverter href "./RssConverter.md" "Details"

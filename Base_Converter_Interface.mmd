@@ -1,0 +1,6 @@
+graph LR
+    DocumentConverter_Interface["DocumentConverter Interface"]
+    MarkItDown_Core["MarkItDown Core"]
+    Built_in_Converters["Built-in Converters"]
+    MarkItDown_Core -- "uses" --> DocumentConverter_Interface
+    Built_in_Converters -- "implements" --> DocumentConverter_Interface

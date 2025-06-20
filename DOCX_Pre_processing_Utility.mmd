@@ -1,0 +1,10 @@
+graph LR
+    DocxPreProcessor["DocxPreProcessor"]
+    OMMLtoLatexConverter["OMMLtoLatexConverter"]
+    TagProcessorBase["TagProcessorBase"]
+    MathConversionUtilities["MathConversionUtilities"]
+    LatexMappingData["LatexMappingData"]
+    DocxPreProcessor -- "invokes" --> OMMLtoLatexConverter
+    OMMLtoLatexConverter -- "inherits from" --> TagProcessorBase
+    OMMLtoLatexConverter -- "utilizes" --> MathConversionUtilities
+    OMMLtoLatexConverter -- "consumes data from" --> LatexMappingData

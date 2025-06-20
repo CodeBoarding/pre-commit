@@ -1,0 +1,5 @@
+graph LR
+    _CustomMarkdownify["_CustomMarkdownify"]
+    _CustomMarkdownify -- "inherits from" --> markdownify_MarkdownConverter
+    HtmlConverter -- "uses" --> _CustomMarkdownify
+    click _CustomMarkdownify href "./_CustomMarkdownify.md" "Details"

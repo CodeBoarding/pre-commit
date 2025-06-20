@@ -1,0 +1,18 @@
+graph LR
+    MarkItDown_Core_Engine["MarkItDown Core Engine"]
+    Base_Converter["Base Converter"]
+    Document_Converter_Result["Document Converter Result"]
+    Stream_Information["Stream Information"]
+    URI_Utilities["URI Utilities"]
+    HTML_Converter["HTML Converter"]
+    Custom_Markdownify["Custom Markdownify"]
+    MarkItDown_Core_Engine -- "manages" --> Base_Converter
+    MarkItDown_Core_Engine -- "uses" --> Stream_Information
+    MarkItDown_Core_Engine -- "uses" --> URI_Utilities
+    MarkItDown_Core_Engine -- "produces" --> Document_Converter_Result
+    Base_Converter -- "defines" --> Document_Converter_Result
+    Base_Converter -- "consumes" --> Stream_Information
+    HTML_Converter -- "extends" --> Base_Converter
+    HTML_Converter -- "delegates to" --> Custom_Markdownify
+    HTML_Converter -- "produces" --> Document_Converter_Result
+    click MarkItDown_Core_Engine href "./MarkItDown_Core_Engine.md" "Details"
